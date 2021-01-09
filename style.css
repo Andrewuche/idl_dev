@@ -1,0 +1,37 @@
+body {
+	padding: 0;
+	margin: 0;
+	background: #fff;
+    min-height: 60vh;
+    background: linear-gradient(to left, #272525 40%, rgb(95, 84, 84) 60%);
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+label .checkbox {
+position: relative;
+display: inline-block;
+margin: 10px;
+}
+
+#reg {
+    border-radius: 4px;
+    outline: none;
+    padding: 6px;
+    vertical-align: middle;
+    background: rgb(196, 169, 164);
+}
+
+#freq {
+    border-radius: 4px;
+    outline: none;
+    padding: 6px;
+    vertical-align: middle;
+    background:  rgb(196, 169, 164);
+}
+
+.footer{
+    margin: 30px;
+    color: tomato;
+}
+

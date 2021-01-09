@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | IDL_PAYSCHFEES</title>
+
+  <script>
+    addEventListener("load", function() {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+
+    // this displays all the values of the form fields filled by the user on click of the proceed button
+    function validation() {
+      var a = document.getElementById("reg").value;
+    
+      var b = document.getElementById("freq").value;
+
+      // this gets the option of the checkbox checked, assigns it to the variable 'c' and then it is what will be displayed as the fee_to_pay in the alert box
+      if (document.getElementById("c1").checked) {
+        var c = document.getElementById("c1").value;
+      }
+
+    else if (document.getElementById("c2").checked) {
+        var c = document.getElementById("c2").value;
+      }
+
+    else if (document.getElementById("c3").checked) {
+        var c = document.getElementById("c3").value;
+      }
+
+    else if (document.getElementById("c4").checked) {
+        var c = document.getElementById("c4").value;
+      }
+
+    else {
+      var c ="";
+    }        
+
+    // this displays an alert box which consists the values of the different form fields filled by the user
+    alert("Registration_id:-  " +a + "\n\n Frequency:-  " +b + "\n\n Fees_to_pay:-  " +c);
+    }
+     
+      // this function executes the checking of only one of the checkboxes at a time
+      function getOne(checkbox) {
+        var checkboxes = document.getElementsByName("fees_to_pay");
+        checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false  
+        })
+      }
+    
+      
+  </script>
+
+        <!-- LINK TO SUPPORT AND IMPLEMENT BOOTSTRAP CLASSES -->
+        <link rel="stylesheet" href="/home/andrew/Desktop/bootstrap stuff/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+        <!-- MY EXTERNAL STYLESHEET -->
+        <link  type="text/css" href="style.css" rel="stylesheet">
+        <!-- //css files -->
+</head>
+<body>
+    
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+
+    <a class="navbar-light" style="color: rgb(206, 111, 111);" href="#">  <strong> PAY SCHOOL FEES</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            About Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#">
+            My School
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light mr-sm-2" type="submit">Search</button>
+      </form>  
+    </div>  
+  </nav>      
+
+
+    <div class="container">
+        <!-- main content -->
+
+      <h1>Pay School Fees</h1>
+      <p>Pay School Fees is an online portal for swift and seemless payment of school fees.</p>
+      <p>Get started by providing your payment details.</p>
+
+      <div>
+          <fieldset>
+        <legend><h2>Payment Details</h2></legend>
+        <p>Enter your details to make payment and make sure they are valid and authentic.</p>
+            
+            <!-- A form for filling school fees details -->
+            <form action="#" method="POST">
+              <label>Registration ID:</label><br>
+                  <input id="reg" type="text" name="registration_id" placeholder="Enter Registration ID" required="true"><br><br>
+              
+              <!-- A select field with -->
+              <label>Frequency:</label><br>
+              <select id="freq" name="frequency">
+              <option value="quarterly">Quarterly</option>
+              <option value="termly">Termly</option>
+              <option value="bi-annually">Bi-annually</option>
+              <option value="annually">Annually</option>
+              </select><br><br>
+              
+              <!-- the onclick helps only one checkbox option to be checked at a time -->
+              <div>
+                  <label> Select fees to pay:</label><br>
+                  <label class="checkbox"><input id="c1" onclick="getOne(this)" type="checkbox" name="fees_to_pay" value="school_fees">School fees</label>
+                  <label class="checkbox "><input id="c2" onclick="getOne(this)" type="checkbox" 
+                    name="fees_to_pay" value="dev_levy" > Developmental levy</label>
+                  <label class="checkbox "><input id="c3" onclick="getOne(this)" type="checkbox" 
+                    name="fees_to_pay" value="pta_levy" > PTA levy</label>
+                  <label class="checkbox "><input id=c4 onclick="getOne(this)" type="checkbox" 
+                    name="fees_to_pay" value="uniform">Uniform</label>   
+              </div>
+              
+              <button class="btn btn-default btn-md btn-danger" type="submit" onclick="validation()">Proceed >></button >                
+            </form>
+          </fieldset>
+          
+      </div>
+    </div>
+  
+  <!-- footer -->
+  <div class="footer">
+    <p>&copy; <strong><i id="demo"></i> PAYSCHOOLFEES powered by Instant Deposit LImited.</strong> | For technical support, email: support@ideposit.africa</p>
+    
+    <!-- this script displays only year as date in the footer -->
+    <script>
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d.getFullYear();
+    </script>
+
+  </div>
+    <!-- footer -->
+</body>
+</html>
