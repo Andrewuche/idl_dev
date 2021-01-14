@@ -53,6 +53,14 @@
         })
       }
     
+                          
+      function validateForm() {
+              var x = document.forms["payf"]["registration_id"].value;
+              if (x !== 10 || x > "10" ) {
+                  alert("Registration number must be ten digits");
+                  return false;
+              }
+          }
       
   </script>
 
@@ -108,7 +116,7 @@
         <p>Enter your details to make payment and make sure they are valid and authentic.</p>
             
             <!-- A form for filling school fees details -->
-            <form action="#" method="POST">
+            <form name="payf" action="#" method="POST" onsubmit="return validateForm">
               <label>Registration ID:</label><br>
                   <input id="reg" type="text" name="registration_id" placeholder="Enter Registration ID" required="true"><br><br>
               
